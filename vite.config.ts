@@ -2,10 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/',   // ✅ Very important for Vercel
+  base: '/',              // ✅ Important for Vercel routing
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
+  build: {
+    outDir: 'dist',       // ✅ Vercel expects this folder
+  }
 })
-
